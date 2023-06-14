@@ -1,0 +1,37 @@
+.site-header {
+	padding: 10px 0;
+}
+
+.header-top-wrap {
+	display: flex;
+	align-items: center;
+}
+
+.site-logo {
+	width: 150px;
+	margin-right: 50px;
+}
+
+.header-top-list {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.header-link {
+	color: #999;
+	font-weight: 700;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.header-link:hover {
+	color: gold;
+}
+
+.header-link-active {
+	color: gold;
+}

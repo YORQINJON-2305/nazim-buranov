@@ -1,0 +1,28 @@
+.site-nav {
+	padding: 20px 0;
+	background-color: #fff;
+}
+
+.nav-list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.nav-item-link {
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: 700;
+	color: #222;
+	transition: color 0.3s linear;
+}
+
+.nav-item-link:hover {
+	color: gold;
+}
+
+.nav-item-link-active {
+	color: gold;
+}

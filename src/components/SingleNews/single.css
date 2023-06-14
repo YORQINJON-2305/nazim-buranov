@@ -1,0 +1,42 @@
+.single-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.single-info {
+	width: 1000px;
+	margin-right: 20px;
+}
+
+.single-img {
+	width: 1000px;
+	height: 600px;
+	border-radius: 0 0 15px 15px;
+	margin-bottom: 20px;
+	object-fit: cover;
+}
+
+.single-title {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.single-descr {
+	font-size: 18px;
+	white-space: pre-wrap;
+}
+
+.single-time {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.back-btn-wrap {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.back-btn {
+	margin-top: 50px;
+	margin-bottom: 30px !important;
+}

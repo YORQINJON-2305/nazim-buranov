@@ -1,0 +1,15 @@
+.articles-wrap {
+	display: flex;
+	margin-top: 20px;
+}
+
+.articles-info-wrap {
+	display: flex;
+}
+
+.articles-progress {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 150px;
+}

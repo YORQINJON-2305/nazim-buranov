@@ -1,0 +1,15 @@
+.news-wrap {
+	display: flex;
+	margin-top: 20px;
+}
+
+.news-info-wrap {
+	display: flex;
+}
+
+.progress-wrap {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-bottom: 150px;
+}

@@ -1,0 +1,31 @@
+.recommendation-item {
+	position: relative;
+	max-width: 300px;
+	width: 100%;
+	max-height: 400px;
+	height: 100%;
+}
+
+.recommendation-link {
+	text-decoration: none;
+	color: #000;
+	transition: color 0.2s ease;
+}
+
+.recommendation-img {
+	width: 300px;
+	height: 200px;
+	margin-bottom: 10px;
+}
+
+.recommendation-title {
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+
+.recommendation-time {
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+	margin: 0;
+}

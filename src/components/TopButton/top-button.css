@@ -1,0 +1,39 @@
+.site-top-link {
+	position: sticky;
+	top: 600px;
+	right: 0;
+	margin: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 60px;
+	margin-left: auto;
+	padding: 15px;
+	font-size: 30px;
+	border: 1px solid #0080ff7c;
+	background-color: #0080ff7c;
+	border-radius: 50%;
+	color: #fff;
+	box-shadow: 0 0 15px 0 #1e8fff89;
+	transition: color 0.3s ease;
+}
+
+.top-link-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: arrow-animate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
+}
+
+@keyframes arrow-animate {
+	0% {
+		transform: translateY(7px);
+	}
+	100% {
+		transform: translateY(-3px);
+	}
+}
