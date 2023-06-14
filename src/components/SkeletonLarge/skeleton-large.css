@@ -1,6 +1,5 @@
-.skeleton-large-wrap {
+.skeleton-wrap-large {
 	display: flex;
-	align-items: start;
 	max-width: 1000px;
 	width: 100%;
 	margin-bottom: 51px;

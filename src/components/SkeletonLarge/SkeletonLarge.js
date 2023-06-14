@@ -1,9 +1,9 @@
-import { Skeleton } from "@mui/material";
 import "./skeleton-large.css";
+import { Skeleton } from "@mui/material";
 
 export const SkeletonLarge = () => {
 	return (
-		<div className='skeleton-large-wrap'>
+		<div className='skeleton-wrap-large'>
 			<Skeleton
 				width={350}
 				height={300}
