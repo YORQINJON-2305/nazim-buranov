@@ -36,7 +36,7 @@ export const Header = () => {
 	return (
 		<header>
 			<div className={isOpen ? "site-header show-menu" : "site-header"}>
-				<div className='container'>
+				<div className='my-container'>
 					<div className='header-top-wrap'>
 						<NavLink to='/'>
 							<img className='site-logo' src={logo} alt="Site's logo" />

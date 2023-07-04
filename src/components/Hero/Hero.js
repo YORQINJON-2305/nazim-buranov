@@ -5,7 +5,7 @@ import { GrInstagram } from "react-icons/gr";
 export const Hero = () => {
 	return (
 		<div className='hero'>
-			<div className='container'>
+			<div className='my-container'>
 				<div className='hero-inner'>
 					<h1 className='site-title'>Nazim Buranov</h1>
 					<p className='hero-descr'>

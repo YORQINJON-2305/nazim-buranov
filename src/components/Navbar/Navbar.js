@@ -4,7 +4,7 @@ import "./navbar.css";
 export const Navbar = () => {
 	return (
 		<nav className='site-nav'>
-			<div className='container'>
+			<div className='my-container'>
 				<ul className='nav-list'>
 					<li className="nav-item">
 						<NavLink

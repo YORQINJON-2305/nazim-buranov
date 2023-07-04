@@ -30,7 +30,7 @@ export const PublicApp = () => {
 			<Header />
 			<Hero />
 			<Navbar />
-			<div className='container'>
+			<div className='my-container'>
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/Sertifikatlar' element={<Certificates />} />
