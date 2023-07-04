@@ -60,81 +60,79 @@ export const Home = () => {
 	return (
 		<div>
 			<Banner />
-			<div className='container'>
-				<div className='home-wrapper'>
-					<div>
-						<UserInfo />
-						<TopButton />
-					</div>
-					<div className='home-info-wrap'>
-						{articlesData?.length !== 0 ? (
-							<Blog
-								category={articlesData.category}
-								img={articlesData.picture}
-								title={articlesData.title}
-								text={articlesData.text}
-								id={articlesData.id}
-								time={articlesData.created_at}
-							/>
-						) : (
-							<SkeletonLarge />
-						)}
-						{
-							<>
-								<h2 className='recommendation-category-text'>
-									Xalqaro munosabatlar
-								</h2>
+			<div className='home-wrapper'>
+				<div className="author-wrap">
+					<UserInfo />
+					<TopButton />
+				</div>
+				<div className='home-info-wrap'>
+					{articlesData?.length !== 0 ? (
+						<Blog
+							category={articlesData.category}
+							img={articlesData.picture}
+							title={articlesData.title}
+							text={articlesData.text}
+							id={articlesData.id}
+							time={articlesData.created_at}
+						/>
+					) : (
+						<SkeletonLarge />
+					)}
+					{
+						<>
+							<h2 className='recommendation-category-text'>
+								Xalqaro munosabatlar
+							</h2>
 
-								{relationsData?.length !== 0 ? (
-									<ul className='recommendation-list'>
-										{relationsData?.map((item) => (
-											<Recommendation key={item.id} data={item} />
-										))}
-									</ul>
-								) : (
-									<SkeletonEdit />
-								)}
-							</>
-						}
-						{scientificArticle?.length !== 0 ? (
-							<Blog
-								category={scientificArticle.category}
-								img={scientificArticle.picture}
-								title={scientificArticle.title}
-								text={scientificArticle.text}
-								id={scientificArticle.id}
-								time={scientificArticle.created_at}
-							/>
-						) : (
-							<SkeletonLarge />
-						)}
-						{
-							<>
-								<h2 className='recommendation-category-text'>Yangiliklar</h2>
-								{relationsData?.length !== 0 ? (
-									<ul className='recommendation-list'>
-										{newsData?.map((item) => (
-											<Recommendation key={item.id} data={item} />
-										))}
-									</ul>
-								) : (
-									<SkeletonEdit />
-								)}
-							</>
-						}
-						{storiesData?.length !== 0 ? (
-							<Blog
-								category={storiesData.category}
-								img={storiesData.picture}
-								title={storiesData.title}
-								text={storiesData.text}
-								id={storiesData.id}
-								time={storiesData.created_at}
-							/>
-						) : (
-							<SkeletonLarge />
-						)}
-					</div>
+							{relationsData?.length !== 0 ? (
+								<ul className='recommendation-list'>
+									{relationsData?.map((item) => (
+										<Recommendation key={item.id} data={item} />
+									))}
+								</ul>
+							) : (
+								<SkeletonEdit />
+							)}
+						</>
+					}
+					{scientificArticle?.length !== 0 ? (
+						<Blog
+							category={scientificArticle.category}
+							img={scientificArticle.picture}
+							title={scientificArticle.title}
+							text={scientificArticle.text}
+							id={scientificArticle.id}
+							time={scientificArticle.created_at}
+						/>
+					) : (
+						<SkeletonLarge />
+					)}
+					{
+						<>
+							<h2 className='recommendation-category-text'>Yangiliklar</h2>
+							{relationsData?.length !== 0 ? (
+								<ul className='recommendation-list'>
+									{newsData?.map((item) => (
+										<Recommendation key={item.id} data={item} />
+									))}
+								</ul>
+							) : (
+								<SkeletonEdit />
+							)}
+						</>
+					}
+					{storiesData?.length !== 0 ? (
+						<Blog
+							category={storiesData.category}
+							img={storiesData.picture}
+							title={storiesData.title}
+							text={storiesData.text}
+							id={storiesData.id}
+							time={storiesData.created_at}
+						/>
+					) : (
+						<SkeletonLarge />
+					)}
 				</div>
 			</div>
 		</div>

@@ -20,12 +20,12 @@ export const News = () => {
 		<div className='news-wrap'>
 			{newsData?.length !== 0 ? (
 				<div className='news-info-wrap'>
-					<ul>
+					<ul className="blog-list">
 						{newsData.map((item) => (
 							<BlogList key={item.id} data={item} />
 						))}
 					</ul>
-					<div>
+					<div className="author-wrap">
 						<UserInfo />
 						<TopButton />
 					</div>

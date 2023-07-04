@@ -5,7 +5,7 @@
 }
 
 .home-info-wrap {
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 .recommendation-category-text {
@@ -16,12 +16,40 @@
 
 .recommendation-list {
 	display: grid;
-	grid-template-columns: repeat(3, 300px);
+	grid-template-columns: repeat(3, auto);
 	justify-content: space-between;
-	width: 1000px;
 	margin-bottom: 50px;
 	padding-left: 0;
 	padding-bottom: 10px;
 	list-style-type: none;
 	border-bottom: 1px solid #9999998b;
+}
+
+@media only screen and (max-width: 992px) {
+	.recommendation-category-text {
+		font-size: 22px;
+	}
+
+	.recommendation-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.home-wrapper {
+		flex-direction: column-reverse;
+	}
+
+	.home-info-wrap {
+		margin-right: 0px;
+	}
+
+	.author-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }

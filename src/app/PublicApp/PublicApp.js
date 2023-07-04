@@ -9,6 +9,20 @@ import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { SingleNews } from "../../components/SingleNews/SingleNew";
 import { SingleArticles } from "../../components/SingleArticles/SingleArticles";
+import { ScientificArticles } from "../../pages/ScientificArticles/ScientificArticles";
+import { SingleScientificArticles } from "../../components/SingleScientificArticles/SingleScientificArticles";
+import { Story } from "../../pages/Story/Story";
+import { SingleStory } from "../../components/SingleStory/SingleStory";
+import { Magazines } from "../../pages/Magazines/Magazines";
+import { SingleMagazines } from "../../components/SingleMagazines/SingleMagazines";
+import { Books } from "../../pages/Books/Books";
+import { SingleInternationRelations } from "../../components/SingleInternationalRelations/SingleInternationRelations";
+import { AboutAuthor } from "../../components/AboutAuthor/AboutAuthor";
+import { Certificates } from "../../pages/Certificates/Certificates";
+import { Photos } from "../../pages/Photos/Photos";
+import { SinglePhoto } from "../../components/SinglePhoto/SinglePhoto";
+import { Videos } from "../../pages/Videos/Videos";
+import { SingleVideos } from "../../components/SingleVideos/SingleVideos";
 
 export const PublicApp = () => {
 	return (
@@ -19,18 +33,30 @@ export const PublicApp = () => {
 			<div className='container'>
 				<Routes>
 					<Route path='/' element={<Home />} />
-					<Route path='/sertificats' element='Sertifikatlar' />
-					<Route path='/videos' element='Videolar' />
-					<Route path='/photos' element='Fotogalereya' />
+					<Route path='/Sertifikatlar' element={<Certificates />} />
+					<Route path='/Videolar' element={<Videos />} />
+					<Route path='/Videolar/:id' element={<SingleVideos />} />
+					<Route path='/Foto_lavhalar' element={<Photos />} />
+					<Route path='/Foto_lavhalar/:id' element={<SinglePhoto />} />
 					<Route path='/Yangiliklar' element={<News />} />
 					<Route path='/Yangiliklar/:id' element={<SingleNews />} />
-					<Route path='/maqolalar/:id' element={<SingleArticles />} />
-					<Route path='/maqolalar' element={<Articles />} />
-					<Route path='/ilmiy-maqolalar' element='<h1>Ilmiy maqolalar<h1/>' />
-					<Route path="/she'riyat" element={"<h1>She'riyat<h1/>"} />
-					<Route path='/hikoyalar' element={"<h1>Hikoyalar<h1/>"} />
-					<Route path='/jurnallar' element={"<h1>Jurnallar<h1/>"} />
-					<Route path='/kitoblar' element={"<h1>Kitoblar<h1/>"} />
+					<Route path='/Maqolalar' element={<Articles />} />
+					<Route path='/Maqolalar/:id' element={<SingleArticles />} />
+					<Route path='/Ilmiy_Maqolalar' element={<ScientificArticles />} />
+					<Route
+						path='/Ilmiy_Maqolalar/:id'
+						element={<SingleScientificArticles />}
+					/>
+					<Route
+						path='/Xalqaro_munosabatlar/:id'
+						element={<SingleInternationRelations />}
+					/>
+					<Route path='/Hikoyalar' element={<Story />} />
+					<Route path='/Hikoyalar/:id' element={<SingleStory />} />
+					<Route path='/Jurnallar' element={<Magazines />} />
+					<Route path='/Jurnallar/:id' element={<SingleMagazines />} />
+					<Route path='/kitoblar' element={<Books />} />
+					<Route path='/muallif-haqida' element={<AboutAuthor />} />
 				</Routes>
 			</div>
 			<Footer />

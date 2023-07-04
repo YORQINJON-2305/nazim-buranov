@@ -37,3 +37,9 @@
 		transform: translateY(-3px);
 	}
 }
+
+@media only screen and (max-width: 768px) {
+	.site-top-link {
+		margin-left: 0;
+	}
+}

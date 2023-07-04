@@ -4,15 +4,25 @@
 }
 
 .single-info {
-	width: 1000px;
+	width: 100%;
+	max-width: 1000px;
 	margin-right: 20px;
 }
 
+.mySwiper {
+	padding-bottom: 40px;
+}
+
+.swiper-pagination {
+	bottom: 0px !important
+	;
+}
+
 .single-img {
-	width: 1000px;
-	height: 600px;
+	width: 100%;
+	max-width: 1000px;
+	height: 470px;
 	border-radius: 0 0 15px 15px;
-	margin-bottom: 20px;
 	object-fit: cover;
 }
 
@@ -22,8 +32,14 @@
 }
 
 .single-descr {
+	margin-bottom: 20px;
 	font-size: 18px;
 	white-space: pre-wrap;
+}
+
+.single-author-name {
+	display: block;
+	margin-bottom: 10px;
 }
 
 .single-time {
@@ -39,4 +55,22 @@
 .back-btn {
 	margin-top: 50px;
 	margin-bottom: 30px !important;
+}
+
+@media only screen and (max-width: 768px) {
+	.single-wrap {
+		flex-direction: column;
+	}
+
+	.single-img {
+		height: 400px;
+	}
+
+	.single-title {
+		font-size: 24px;
+	}
+
+	.single-descr {
+		font-size: 16px;
+	}
 }

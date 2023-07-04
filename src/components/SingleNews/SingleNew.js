@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./single.css";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Dna } from "react-loader-spinner";
@@ -7,6 +7,16 @@ import { UserInfo } from "../userInfo/UserInfo";
 import { TopButton } from "../TopButton/TopButton";
 import { Button } from "@mui/material";
 import { TiArrowBack } from "react-icons/ti";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
 
 export const SingleNews = () => {
 	const [post, setPost] = useState({});
@@ -23,7 +33,30 @@ export const SingleNews = () => {
 			.catch((err) => console.log(err));
 	}, [id]);
 
-	const { title, picture, text, created_at } = post;
+	const pictureArr = [];
+	const { title, picture, picture2, picture3, text, author, created_at } = post;
+
+	const checkImg = () => {
+		if (picture) {
+			pictureArr.push(picture);
+		} else {
+			return pictureArr;
+		}
+
+		if (picture2) {
+			pictureArr.push(picture2);
+		} else {
+			return pictureArr;
+		}
+
+		if (picture3) {
+			pictureArr.push(picture3);
+		} else {
+			return pictureArr;
+		}
+	};
+
+	checkImg();
 
 	const trimDate = created_at?.slice(0, 10);
 
@@ -32,9 +65,31 @@ export const SingleNews = () => {
 			{post.length !== 0 ? (
 				<div className='single-wrap'>
 					<div className='single-info'>
-						<img className='single-img' src={picture} alt={title} />
+						<Swiper
+							effect={"coverflow"}
+							grabCursor={true}
+							centeredSlides={true}
+							slidesPerView={"auto"}
+							coverflowEffect={{
+								rotate: 50,
+								stretch: 0,
+								depth: 100,
+								modifier: 1,
+								slideShadows: true,
+							}}
+							pagination={true}
+							modules={[EffectCoverflow, Pagination]}
+							className='mySwiper'
+						>
+							{pictureArr?.map((item) => (
+								<SwiperSlide key={item} style={{ background: "transparent" }}>
+									<img className='single-img' src={item} alt={title} />
+								</SwiperSlide>
+							))}
+						</Swiper>
 						<h2 className='single-title'>{title}</h2>
 						<p className='single-descr'>{text}</p>
+						<strong className='single-author-name'>{author}</strong>
 						<p className='single-time'>{trimDate}</p>
 						<div className='back-btn-wrap'>
 							<Button
@@ -47,7 +102,7 @@ export const SingleNews = () => {
 							</Button>
 						</div>
 					</div>
-					<div>
+					<div className="author-wrap">
 						<UserInfo />
 						<TopButton />
 					</div>

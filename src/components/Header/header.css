@@ -1,4 +1,6 @@
 .site-header {
+	position: relative;
+	z-index: 10;
 	padding: 10px 0;
 }
 
@@ -34,4 +36,105 @@
 
 .header-link-active {
 	color: gold;
+}
+
+.menu-btn {
+	position: relative;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 18px;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu-btn-burger {
+	width: 24px;
+	height: 1px;
+	background-color: #000;
+	transition: all 0.3s ease-in-out;
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+	position: absolute;
+	width: 24px;
+	height: 1px;
+	background-color: #000;
+	transition: all 0.3s ease-in-out;
+	content: "";
+}
+
+.menu-btn-burger::before {
+	transform: translateY(-7px);
+}
+
+.menu-btn-burger::after {
+	transform: translateY(7px);
+}
+
+/* ANIMATION */
+
+.site-header.show-menu .menu-btn-burger {
+	transform: translateX(50px);
+}
+
+.site-header.show-menu .menu-btn-burger::before {
+	transform: rotate(45deg) translate(-35px, 35px);
+}
+
+.site-header.show-menu .menu-btn-burger::after {
+	transform: rotate(-45deg) translate(-35px, -35px);
+}
+
+.overlay {
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	top: 67px;
+	left: 0;
+	bottom: 0;
+	background-color: #000000c4;
+	display: none;
+}
+
+.site-header.show-menu ~ .overlay {
+	display: block;
+}
+
+@media only screen and (max-width: 992px) {
+	.header-top-wrap {
+		justify-content: space-between;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.menu-btn {
+		display: flex;
+	}
+
+	.header-nav {
+		position: absolute;
+		z-index: 1;
+		top: 90px;
+		left: calc(50% - 45%);
+		width: 90%;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 32px 0px;
+	}
+
+	.header-top-list {
+		flex-direction: column;
+	}
+
+	.site-header.show-menu .header-nav {
+		display: flex;
+	}
+
+	.header-link {
+		font-size: 28px;
+		color: #fff;
+	}
 }

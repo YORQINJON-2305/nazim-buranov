@@ -4,6 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	flex-shrink: 0;
 	max-width: 262px;
 	width: 100%;
 	max-height: 500px;
@@ -14,7 +15,8 @@
 }
 
 .user-img {
-	width: 220px;
+	max-width: 220px;
+	width: 100%;
 	border: 2px solid #fff;
 }
 
@@ -22,6 +24,7 @@
 	margin-top: 15px;
 	margin-bottom: 10px;
 	color: #ffffff;
+	white-space: nowrap;
 }
 
 .user-descr {
@@ -29,7 +32,40 @@
 	color: #ffffffa3;
 }
 
-.user-more-link {
-	color: #ffffffab;
-	border-color: #ffffffcc;
+.user-info-btn {
+	padding: 0 !important;
+}
+
+.user-info-link {
+	padding: 6px 20px;
+	text-decoration: none;
+	color: #ffffffce;
+	transition: color 0.3s ease;
+}
+
+.user-info-link:hover {
+	color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+	.user-info-card {
+		max-width: 220px;
+		max-height: 400px;
+	}
+
+	.username-text {
+		font-size: 24px;
+	}
+
+	.user-descr {
+		margin-bottom: 20px;
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.user-info-card {
+		max-width: 250px;
+		max-height: 440px;
+	}
 }

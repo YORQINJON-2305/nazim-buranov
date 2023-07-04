@@ -7,9 +7,24 @@
 	display: flex;
 }
 
+.blog-list {
+	margin-right: 20px;
+	padding-left: 0;
+}
+
 .progress-wrap {
 	display: flex;
 	justify-content: center;
 	width: 100%;
 	margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+	.news-info-wrap {
+		flex-direction: column;
+	}
+
+	.blog-list {
+		margin-right: 0px;
+	}
 }

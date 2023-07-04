@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className='site-nav'>
 			<div className='container'>
 				<ul className='nav-list'>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
@@ -18,7 +18,7 @@ export const Navbar = () => {
 							Bosh sahifa
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
@@ -30,67 +30,55 @@ export const Navbar = () => {
 							Yangiliklar
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
 									? "nav-item-link nav-item-link-active"
 									: "nav-item-link"
 							}
-							to='/maqolalar'
+							to='/Maqolalar'
 						>
 							Maqolalar
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
 									? "nav-item-link nav-item-link-active"
 									: "nav-item-link"
 							}
-							to='/ilmiy-maqolalar'
+							to='/Ilmiy_Maqolalar'
 						>
 							Ilmiy Maqolalar
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
 									? "nav-item-link nav-item-link-active"
 									: "nav-item-link"
 							}
-							to="/she'riyat"
-						>
-							She'riyat
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							className={({ isActive }) =>
-								isActive
-									? "nav-item-link nav-item-link-active"
-									: "nav-item-link"
-							}
-							to='/hikoyalar'
+							to='/Hikoyalar'
 						>
 							Hikoyalar
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive
 									? "nav-item-link nav-item-link-active"
 									: "nav-item-link"
 							}
-							to='/jurnallar'
+							to='/Jurnallar'
 						>
 							Jurnallar
 						</NavLink>
 					</li>
-					<li>
+					<li className="nav-item">
 						<NavLink
 							className={({ isActive }) =>
 								isActive

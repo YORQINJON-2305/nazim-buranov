@@ -29,49 +29,47 @@ export const Banner = () => {
 
 	return (
 		<div className='banner'>
-			<div className='container'>
-				{newsData?.length !== 0 ? (
-					<Swiper
-						spaceBetween={30}
-						pagination={{
-							dynamicBullets: true,
-						}}
-						effect={"fade"}
-						modules={[EffectFade, Pagination]}
-						className='mySwiper'
-					>
-						{newsData?.map((item) => (
-							<SwiperSlide key={item.id}>
-								<img
-									className='banner-img'
-									src={item.picture}
-									alt={item.title}
-								/>
-								<h1 className='banner-title'>{item.title}</h1>
-								<Button className='banner-more-btn' variant='contained'>
-									<Link
-										className='banner-more-link'
-										to={`/${item.category}/${item.id}`}
-									>
-										Batafsil
-									</Link>
-								</Button>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				) : (
-					<div className='progress-wrap'>
-						<Dna
-							visible={true}
-							height='120'
-							width='120'
-							ariaLabel='dna-loading'
-							wrapperStyle={{}}
-							wrapperClass='dna-wrapper'
-						/>
-					</div>
-				)}
-			</div>
+			{newsData?.length !== 0 ? (
+				<Swiper
+					spaceBetween={30}
+					pagination={{
+						dynamicBullets: true,
+					}}
+					effect={"fade"}
+					modules={[EffectFade, Pagination]}
+					className='banner-swiper'
+				>
+					{newsData?.map((item) => (
+						<SwiperSlide key={item.id}>
+							<img
+								className='banner-img'
+								src={item.picture}
+								alt={item.title}
+							/>
+							<h1 className='banner-title'>{item.title}</h1>
+							<Button className='banner-more-btn' variant='contained'>
+								<Link
+									className='banner-more-link'
+									to={`/${item.category}/${item.id}`}
+								>
+									Batafsil
+								</Link>
+							</Button>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			) : (
+				<div className='progress-wrap'>
+					<Dna
+						visible={true}
+						height='120'
+						width='120'
+						ariaLabel='dna-loading'
+						wrapperStyle={{}}
+						wrapperClass='dna-wrapper'
+					/>
+				</div>
+			)}
 		</div>
 	);
 };

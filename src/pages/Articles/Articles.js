@@ -19,13 +19,13 @@ export const Articles = () => {
 	return (
 		<div className='articles-wrap'>
 			{articlesData?.length !== 0 ? (
-				<div className='articles-info-wrap'>
-					<ul>
+				<div className='news-info-wrap'>
+					<ul className="blog-list">
 						{articlesData.map((item) => (
 							<BlogList key={item.id} data={item} />
 						))}
 					</ul>
-					<div>
+					<div className="author-wrap">
 						<UserInfo />
 						<TopButton />
 					</div>
