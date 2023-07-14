@@ -26,7 +26,11 @@ export const AddCertificates = () => {
       body: formData,
     })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        if (Object.keys(data).length >= 2) {
+          toast.success("Sertifikat qo'shildi ✅");
+        }
+      })
       .catch(error => {
         console.log(error);
       });
