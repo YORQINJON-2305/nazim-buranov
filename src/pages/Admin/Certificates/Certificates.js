@@ -66,7 +66,7 @@ export const Certificates = () => {
             </div>
           ) : (
             <div className="no-data-wrap">
-              <h3>Ma'lumotlar yoq</h3>
+              <h3>Sertifikatlar yoq</h3>
             </div>
           )}
         </div>

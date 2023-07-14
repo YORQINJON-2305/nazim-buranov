@@ -43,7 +43,7 @@ export const Articles = () => {
         </div>
       ) : (
         <div className="posts-wrap">
-          <h2 className="posts-headline">Jurnallar</h2>
+          <h2 className="posts-headline">Maqolalar</h2>
           {results?.length > 0 ? (
             <div>
               <ul className="posts-list">
@@ -64,7 +64,7 @@ export const Articles = () => {
             </div>
           ) : (
             <div className="no-data-wrap">
-              <h3>Ma'lumotlar yoq</h3>
+              <h3>Xabarlar yoq</h3>
             </div>
           )}
         </div>

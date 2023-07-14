@@ -129,8 +129,6 @@ export const AdminPostCard = ({ data, fetchData }) => {
             />
             <TextField
               style={{ width: "100%", marginBottom: "15px" }}
-              required
-              id="outlined-required"
               label="Author"
               inputRef={authorRef}
               defaultValue={author}

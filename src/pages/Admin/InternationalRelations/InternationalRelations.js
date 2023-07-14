@@ -2,9 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { Pagination } from "../../../components/Pagination/Pagination";
-import { AdminBookCard } from "../../../components/AdminBookCard/AdminBookCard";
+import { AdminPostCard } from "../../../components/AdminPostCard/AdminPostCard";
 
-export const Books = () => {
+export const InternationalRelations = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +18,7 @@ export const Books = () => {
   const fetchData = async (pageNumber = 1) => {
     try {
       const res = await axios.get(
-        `https://nazimburanov.uz/books/?page=${pageNumber}`
+        `https://nazimburanov.uz/international_relations/?page=${pageNumber}`
       );
       if (res.status === 200) {
         setData(res.data);
@@ -43,12 +43,12 @@ export const Books = () => {
         </div>
       ) : (
         <div className="posts-wrap">
-          <h2 className="posts-headline">Kitoblar</h2>
+          <h2 className="posts-headline">Xalqaro munosabatlar</h2>
           {results?.length > 0 ? (
             <div>
               <ul className="posts-list">
                 {results?.map(item => (
-                  <AdminBookCard
+                  <AdminPostCard
                     key={item.id}
                     data={item}
                     fetchData={fetchData}
@@ -64,7 +64,7 @@ export const Books = () => {
             </div>
           ) : (
             <div className="no-data-wrap">
-              <h3>Kitoblar yoq</h3>
+              <h3>Xabarlar yoq</h3>
             </div>
           )}
         </div>

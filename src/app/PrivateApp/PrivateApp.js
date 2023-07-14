@@ -17,6 +17,7 @@ import { AddPostsPage } from "../../components/AddPostPage/AddPostsPage";
 import { AddVideo } from "../../components/AddVideo/AddVideo";
 import { AddCertificates } from "../../components/AddCertificate/AddCertificate";
 import { AddBook } from "../../components/AddBook/AddBook";
+import { InternationalRelations } from "../../pages/Admin/InternationalRelations/InternationalRelations";
 
 export const PrivateApp = () => {
   return (
@@ -31,6 +32,10 @@ export const PrivateApp = () => {
           <Route path="/Ilmiy_Maqolalar" element={<ScientificArticles />} />
           <Route path="/Hikoyalar" element={<Stories />} />
           <Route path="/Jurnallar" element={<Magazines />} />
+          <Route
+            path="/Xalqaro_Munosabatlar"
+            element={<InternationalRelations />}
+          />
           <Route path="/Kitoblar" element={<Books />} />
           <Route path="/Videolar" element={<Videos />} />
           <Route path="/Foto_lavhalar" element={<Photos />} />

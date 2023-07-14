@@ -53,8 +53,7 @@ export const AdminBookCard = ({ data, fetchData }) => {
           <h3 className="posts-title">{title}</h3>
           <p className="posts-descr">{splitText}...</p>
           <span style={{ display: "block", marginBottom: "15px" }}>
-            {" "}
-            <strong>Muallif:</strong> {author}
+            <strong>{author}</strong>
           </span>
         </div>
         <div className="posts-control">
@@ -100,8 +99,6 @@ export const AdminBookCard = ({ data, fetchData }) => {
             />
             <TextField
               style={{ width: "100%", marginBottom: "15px" }}
-              required
-              id="outlined-required"
               label="Author"
               inputRef={authorRef}
               defaultValue={author}

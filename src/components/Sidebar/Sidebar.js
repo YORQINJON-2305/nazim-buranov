@@ -111,6 +111,15 @@ export const Sidebar = () => {
                 className={({ isActive }) =>
                   isActive ? "sidebar-link link-active" : "sidebar-link"
                 }
+                to="/Xalqaro_munosabatlar">
+                Xalqaro munosabatlar
+              </NavLink>
+            </li>
+            <li className="sidebar-item" onClick={() => setIsOpen(false)}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "sidebar-link link-active" : "sidebar-link"
+                }
                 to="/Kitoblar">
                 Kitoblar
               </NavLink>

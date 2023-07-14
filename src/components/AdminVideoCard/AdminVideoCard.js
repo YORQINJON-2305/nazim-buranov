@@ -111,7 +111,7 @@ export const AdminVideoCard = ({ data, fetchData }) => {
               style={{ width: "100%", marginBottom: "15px" }}
               required
               id="outlined-required"
-              label="Text"
+              label="Url"
               inputRef={urlRef}
               defaultValue={video}
             />
