@@ -1,47 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
 .site-nav {
-	padding: 20px 0;
-	background-color: #fff;
+  padding: 20px 0;
+  background-color: #fff;
 }
 
 .nav-list {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-left: 0;
-	list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .nav-item-link {
-	font-size: 18px;
-	text-decoration: none;
-	font-weight: 700;
-	color: #222;
-	transition: color 0.3s linear;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #222;
+  transition: color 0.3s linear;
 }
 
 .nav-item-link:hover {
-	color: gold;
+  color: gold;
 }
 
 .nav-item-link-active {
-	color: gold;
+  color: gold;
+}
+
+@media only screen and (max-width: 1100px) {
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0;
+    gap: 25px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-	.nav-item-link {
-		font-size: 16px;
-	}
+  .nav-item-link {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 776px) {
-	.nav-list {
-		flex-wrap: wrap;
-		justify-content: center;
-		margin-bottom: 0;
-		gap: 25px;
-	}
-
-	.nav-item {
-		text-align: center;
-	}
+  .nav-item {
+    text-align: center;
+  }
 }

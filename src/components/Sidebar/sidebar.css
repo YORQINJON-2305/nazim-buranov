@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
+
+/* HEADER */
+
+.admin-header {
+  display: none;
+  box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  padding: 20px 0px;
+  border-radius: 8px;
+}
+
+.admin-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-menu-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin-menu-btn-burger {
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin-menu-btn-burger::before,
+.admin-menu-btn-burger::after {
+  position: absolute;
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+
+.admin-menu-btn-burger::before {
+  transform: translateY(-7px);
+}
+
+.admin-menu-btn-burger::after {
+  transform: translateY(7px);
+}
+
+/* ANIMATION */
+
+.sidebar-active .admin-menu-btn-burger {
+  transform: translateX(50px);
+}
+
+.sidebar-active .admin-menu-btn-burger::before {
+  transform: rotate(45deg) translate(-35px, 35px);
+}
+
+.sidebar-active .admin-menu-btn-burger::after {
+  transform: rotate(-45deg) translate(-35px, -35px);
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  padding: 30px 20px;
+  background-color: #fcf8ff;
+  border-right: 1px solid #e8dfec;
+}
+
+.logo-link {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.site-logo {
+  width: 120px;
+}
+
+.sidebar-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0px;
+  border-bottom: 1px solid #e8dfec;
+}
+
+.sidebar-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+  font-family: "Rowdies", cursive;
+  font-display: swap;
+  font-size: 20px;
+  color: #000;
+  font-weight: 300;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+.sidebar-link:hover {
+  transform: scale(0.95);
+  color: #ff1818;
+}
+
+.link-active {
+  color: #ff1818;
+}
+
+.link-active:hover {
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .sidebar-link {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .sidebar {
+    max-width: 250px;
+  }
+
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .sidebar-active {
+    overflow: hidden;
+  }
+
+  .admin-header {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar-active .sidebar {
+    display: block;
+    position: fixed;
+    top: 82px;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: 100%;
+    padding: 30px 20px 100px 20px;
+    background-color: #fcf8ff;
+    border-right: 1px solid #efebf0;
+    overflow: hidden;
+  }
+
+  .sidebar-active .logo-link {
+    display: none;
+  }
+
+  .sidebar-active .sidebar-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar-link {
+    font-size: 16px;
+  }
+
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,32 @@
+.add-post-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.add-post-list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.add-post-btn {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media only screen and (max-width: 992px) {
+  .add-post-list {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .add-post-wrap {
+    height: 70vh;
+  }
+}

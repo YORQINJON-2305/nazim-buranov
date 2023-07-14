@@ -1,0 +1,16 @@
+.private-home {
+  margin-left: 300px;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 992px) {
+  .private-home {
+    margin-left: 250px;
+  }
+}
+
+@media only screen and (max-width: 730px) {
+  .private-home {
+    margin-left: 0;
+  }
+}

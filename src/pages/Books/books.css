@@ -1,89 +1,93 @@
 .books-info-wrap {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .books-list {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	flex-wrap: wrap;
-	grid-gap: 15px 20px;
-	margin-right: 20px;
-	padding-left: 0;
-	list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 15px 20px;
+  margin-right: 20px;
+  padding-left: 0;
+  list-style-type: none;
 }
 
 .books-item {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 100%;
-	max-width: 300px;
-	height: 100%;
-	border: 2px solid gold;
-	padding: 20px 15px;
-	border-radius: 8px;
-	transition: 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid gold;
+  padding: 20px 15px;
+  border-radius: 8px;
+  transition: 0.4s ease;
 }
 
 .books-item:hover {
-	cursor: pointer;
-	border-radius: 0px;
-	transform: scale(1.02);
+  cursor: pointer;
+  border-color: transparent;
+  box-shadow: 0px 2px 1px -1px #ffd90051, 0px 1px 1px 0px #ffd90075,
+    0px 1px 10px 0px #ffd900d8;
 }
 
 .books-title {
-	font-size: 26px;
+  font-size: 26px;
 }
 
 .books-author {
-	display: block;
-	margin-bottom: 15px;
+  display: block;
+  margin-bottom: 15px;
 }
 
 .books-author-name {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 .books-download-btn {
-	width: 100%;
-	display: flex !important;
-	align-items: center !important;
+  width: 100%;
+  display: flex !important;
+  align-items: center !important;
 }
-
 @media only screen and (max-width: 1200px) {
-	.books-list {
-		grid-template-columns: repeat(2, auto);
-	}
+  .books-list {
+    grid-template-columns: repeat(2, auto);
+  }
 
-	.books-title {
-		font-size: 24px;
-	}
+  .books-title {
+    font-size: 24px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-	.books-list {
-		grid-template-columns: repeat(1, auto);
-	}
+  .books-info-wrap {
+    justify-content: space-evenly;
+  }
+  .books-list {
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+  }
 
-	.books-item {
-		max-width: 500px;
-	}
+  .books-item {
+    max-width: 500px;
+  }
 
-	.books-title {
-		font-size: 24px;
-	}
+  .books-title {
+    font-size: 24px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-	.books-info-wrap {
-		flex-direction: column;
-	}
+  .books-info-wrap {
+    flex-direction: column;
+  }
 
-	.books-list {
-		margin-right: 0;
-		margin-bottom: 30px;
-	}
+  .books-list {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }

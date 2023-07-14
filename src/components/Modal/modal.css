@@ -1,0 +1,16 @@
+.category-select {
+	width: 100%;
+	padding: 8px 14px;
+	border-radius: 4px;
+	outline: none;
+	border: 1px solid #464646;
+}
+
+.category-select:focus {
+	border-color: #0d0dbe;
+}
+
+.edit-btn-wrap {
+	display: flex;
+	justify-content: end;
+}

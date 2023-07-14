@@ -1,140 +1,173 @@
 .site-header {
-	position: relative;
-	z-index: 10;
-	padding: 10px 0;
+  position: relative;
+  z-index: 10;
+  padding: 10px 0;
 }
 
 .header-top-wrap {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .site-logo {
-	width: 150px;
-	margin-right: 50px;
+  width: 150px;
+  margin-right: 50px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .header-top-list {
-	display: flex;
-	gap: 20px;
-	align-items: center;
-	list-style-type: none;
-	padding-left: 0;
-	margin-bottom: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+  margin-right: 20px;
+  margin-bottom: 0;
 }
 
 .header-link {
-	color: #999;
-	font-weight: 700;
-	text-decoration: none;
-	transition: color 0.3s ease;
+  color: #999;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .header-link:hover {
-	color: gold;
+  color: gold;
 }
 
 .header-link-active {
-	color: gold;
+  color: gold;
 }
 
 .menu-btn {
-	position: relative;
-	display: none;
-	align-items: center;
-	justify-content: center;
-	width: 24px;
-	height: 18px;
-	transition: all 0.3s ease-in-out;
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 18px;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-btn-burger {
-	width: 24px;
-	height: 1px;
-	background-color: #000;
-	transition: all 0.3s ease-in-out;
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-btn-burger::before,
 .menu-btn-burger::after {
-	position: absolute;
-	width: 24px;
-	height: 1px;
-	background-color: #000;
-	transition: all 0.3s ease-in-out;
-	content: "";
+  position: absolute;
+  width: 24px;
+  height: 1px;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+  content: "";
 }
 
 .menu-btn-burger::before {
-	transform: translateY(-7px);
+  transform: translateY(-7px);
 }
 
 .menu-btn-burger::after {
-	transform: translateY(7px);
+  transform: translateY(7px);
 }
 
 /* ANIMATION */
 
 .site-header.show-menu .menu-btn-burger {
-	transform: translateX(50px);
+  transform: translateX(50px);
 }
 
 .site-header.show-menu .menu-btn-burger::before {
-	transform: rotate(45deg) translate(-35px, 35px);
+  transform: rotate(45deg) translate(-35px, 35px);
 }
 
 .site-header.show-menu .menu-btn-burger::after {
-	transform: rotate(-45deg) translate(-35px, -35px);
+  transform: rotate(-45deg) translate(-35px, -35px);
 }
 
 .overlay {
-	position: fixed;
-	width: 100%;
-	z-index: 5;
-	top: 67px;
-	left: 0;
-	bottom: 0;
-	background-color: #000000c4;
-	display: none;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  top: 63px;
+  left: 0;
+  bottom: 0;
+  background-color: #000000e3;
+  display: none;
 }
 
 .site-header.show-menu ~ .overlay {
-	display: block;
+  display: block;
 }
 
 @media only screen and (max-width: 992px) {
-	.header-top-wrap {
-		justify-content: space-between;
-	}
+  .header-top-wrap {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header-login-btn {
+    padding: 3px 8px !important;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .site-logo {
+    width: 140px;
+    margin-right: 20px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
-	.menu-btn {
-		display: flex;
-	}
+  .menu-btn {
+    display: flex;
+  }
 
-	.header-nav {
-		position: absolute;
-		z-index: 1;
-		top: 90px;
-		left: calc(50% - 45%);
-		width: 90%;
-		display: none;
-		align-items: center;
-		justify-content: center;
-		padding: 32px 0px;
-	}
+  .header-nav {
+    position: absolute;
+    z-index: 2;
+    top: 90px;
+    left: calc(50% - 45%);
+    width: 90%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0px;
+  }
 
-	.header-top-list {
-		flex-direction: column;
-	}
+  .header-top-list {
+    flex-direction: column;
+  }
 
-	.site-header.show-menu .header-nav {
-		display: flex;
-	}
+  .site-header.show-menu .header-nav {
+    display: flex;
+    flex-direction: column;
+  }
 
-	.header-link {
-		font-size: 28px;
-		color: #fff;
-	}
+  .site-header.show-menu .header-top-list {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .site-header.show-menu .header-login-btn {
+    padding: 6px 30px !important;
+    background-color: rgb(193, 164, 0);
+    color: #fff;
+  }
+
+  .header-link {
+    font-size: 28px;
+    color: #fff;
+  }
 }

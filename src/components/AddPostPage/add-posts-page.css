@@ -1,0 +1,124 @@
+.add-post-page-wrap {
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+.admin-back-btn {
+  color: #000 !important;
+  font-size: 30px !important;
+  padding: 10px 20px 10px 0 !important;
+}
+
+.file-input-list {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.category-select {
+  margin-bottom: 20px;
+}
+
+.file-input-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.file-input-item {
+  width: 100%;
+  max-width: 200px;
+}
+
+.file-input-name {
+  margin-bottom: 0;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 12px;
+  background-color: #4245a8;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.file-input__label svg {
+  height: 16px;
+  margin-right: 4px;
+}
+
+.add-post-form-btn-wrap {
+  display: flex;
+  justify-content: end;
+}
+
+.add-post-form-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  .file-input-list {
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    grid-gap: 20px;
+  }
+
+  .file-input-item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .file-input-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 475px) {
+  .file-input-list {
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-around;
+    grid-gap: 20px;
+  }
+
+  .file-input__label {
+    font-size: 14px;
+    color: #fff;
+    padding: 4px 8px;
+    background-color: #4245a8;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .file-input__label svg {
+    height: 12px;
+    margin-right: 4px;
+  }
+
+  .file-input-name {
+    font-size: 14px;
+  }
+
+  .add-post-form-btn {
+    max-width: 100%;
+  }
+}

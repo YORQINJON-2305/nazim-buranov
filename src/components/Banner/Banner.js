@@ -46,15 +46,17 @@ export const Banner = () => {
 								src={item.picture}
 								alt={item.title}
 							/>
-							<h1 className='banner-title'>{item.title}</h1>
-							<Button className='banner-more-btn' variant='contained'>
-								<Link
-									className='banner-more-link'
-									to={`/${item.category}/${item.id}`}
-								>
-									Batafsil
-								</Link>
-							</Button>
+							<div className="banner-info-wrap">
+								<h1 className='banner-title'>{item.title}</h1>
+								<Button className='banner-more-btn' variant='contained'>
+									<Link
+										className='banner-more-link'
+										to={`/${item.category}/${item.id}`}
+									>
+										Batafsil
+									</Link>
+								</Button>
+							</div>
 						</SwiperSlide>
 					))}
 				</Swiper>
