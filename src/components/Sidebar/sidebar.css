@@ -195,7 +195,7 @@
     padding: 30px 20px 100px 20px;
     background-color: #fcf8ff;
     border-right: 1px solid #efebf0;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .sidebar-active .logo-link {

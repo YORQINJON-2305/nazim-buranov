@@ -13,8 +13,6 @@ import { ScientificArticles } from "../../pages/ScientificArticles/ScientificArt
 import { SingleScientificArticles } from "../../components/SingleScientificArticles/SingleScientificArticles";
 import { Story } from "../../pages/Story/Story";
 import { SingleStory } from "../../components/SingleStory/SingleStory";
-import { Magazines } from "../../pages/Magazines/Magazines";
-import { SingleMagazines } from "../../components/SingleMagazines/SingleMagazines";
 import { Books } from "../../pages/Books/Books";
 import { SingleInternationRelations } from "../../components/SingleInternationalRelations/SingleInternationRelations";
 import { AboutAuthor } from "../../components/AboutAuthor/AboutAuthor";
@@ -25,10 +23,12 @@ import { Videos } from "../../pages/Videos/Videos";
 import { SingleVideos } from "../../components/SingleVideos/SingleVideos";
 import { Login } from "../../pages/Login/Login";
 import { InternationalRelations } from "../../pages/InternationalRelation/InternationalRelations";
+import { TestMode } from "../../components/TestMode/TestMode";
 
 export const PublicApp = () => {
   return (
     <div className="home">
+      <TestMode />
       <Header />
       <Hero />
       <Navbar />
@@ -55,8 +55,6 @@ export const PublicApp = () => {
           />
           <Route path="/Hikoyalar" element={<Story />} />
           <Route path="/Hikoyalar/:id" element={<SingleStory />} />
-          <Route path="/Jurnallar" element={<Magazines />} />
-          <Route path="/Jurnallar/:id" element={<SingleMagazines />} />
           <Route
             path="/Xalqaro_Munosabatlar"
             element={<InternationalRelations />}

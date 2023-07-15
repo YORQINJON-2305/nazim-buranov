@@ -5,7 +5,6 @@ import { News } from "../../pages/Admin/News/News";
 import { Articles } from "../../pages/Admin/Articles/Articles";
 import { ScientificArticles } from "../../pages/Admin/ScientificArticles/ScientificArticles";
 import { Stories } from "../../pages/Admin/Stories/Stories";
-import { Magazines } from "../../pages/Admin/Magazines/Magazines";
 import { Books } from "../../pages/Admin/Books/Books";
 import { ToastContainer } from "react-toastify";
 import { Home } from "../../pages/Admin/Home/Home";
@@ -31,7 +30,6 @@ export const PrivateApp = () => {
           <Route path="/Maqolalar" element={<Articles />} />
           <Route path="/Ilmiy_Maqolalar" element={<ScientificArticles />} />
           <Route path="/Hikoyalar" element={<Stories />} />
-          <Route path="/Jurnallar" element={<Magazines />} />
           <Route
             path="/Xalqaro_Munosabatlar"
             element={<InternationalRelations />}
