@@ -1,7 +1,8 @@
-.site-header {
+.header-inner {
   position: relative;
   z-index: 10;
   padding: 10px 0;
+  background-color: #fff;
 }
 
 .header-top-wrap {
@@ -83,15 +84,15 @@
 
 /* ANIMATION */
 
-.site-header.show-menu .menu-btn-burger {
+.header-inner.show-menu .menu-btn-burger {
   transform: translateX(50px);
 }
 
-.site-header.show-menu .menu-btn-burger::before {
+.header-inner.show-menu .menu-btn-burger::before {
   transform: rotate(45deg) translate(-35px, 35px);
 }
 
-.site-header.show-menu .menu-btn-burger::after {
+.header-inner.show-menu .menu-btn-burger::after {
   transform: rotate(-45deg) translate(-35px, -35px);
 }
 
@@ -99,14 +100,14 @@
   position: fixed;
   width: 100%;
   z-index: 5;
-  top: 63px;
+  top: 40px;
   left: 0;
   bottom: 0;
   background-color: #000000e3;
   display: none;
 }
 
-.site-header.show-menu ~ .overlay {
+.header-inner.show-menu ~ .overlay {
   display: block;
 }
 
@@ -150,17 +151,17 @@
     flex-direction: column;
   }
 
-  .site-header.show-menu .header-nav {
+  .header-inner.show-menu .header-nav {
     display: flex;
     flex-direction: column;
   }
 
-  .site-header.show-menu .header-top-list {
+  .header-inner.show-menu .header-top-list {
     margin-right: 0;
     margin-bottom: 30px;
   }
 
-  .site-header.show-menu .header-login-btn {
+  .header-inner.show-menu .header-login-btn {
     padding: 6px 30px !important;
     background-color: rgb(193, 164, 0);
     color: #fff;

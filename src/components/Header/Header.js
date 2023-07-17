@@ -34,8 +34,8 @@ export const Header = () => {
   };
 
   return (
-    <header>
-      <div className={isOpen ? "site-header show-menu" : "site-header"}>
+    <header className="site-header">
+      <div className={isOpen ? "header-inner show-menu" : "header-inner"}>
         <div className="my-container">
           <div className="header-top-wrap">
             <NavLink to="/">

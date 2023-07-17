@@ -9,7 +9,7 @@ export const UserInfo = () => {
       <img className="user-img" src={userPhoto} alt="User's img" />
       <h2 className="username-text">Nazim Bo'ronov</h2>
       <p className="user-descr">
-        Jurnalist, bo'lajak filologiya fanlari doktori (PhD)
+        Jurnalist, bo'lajak filologiya fanlari doktori (DSc)
       </p>
       <Button
         className="user-info-btn"
