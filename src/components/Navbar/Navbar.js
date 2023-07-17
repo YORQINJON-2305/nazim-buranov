@@ -68,17 +68,6 @@ export const Navbar = () => {
                   ? "nav-item-link nav-item-link-active"
                   : "nav-item-link"
               }
-              to="/Jurnallar">
-              Jurnallar
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "nav-item-link nav-item-link-active"
-                  : "nav-item-link"
-              }
               to="/Videolar">
               Oramizdagi qahramonlar
             </NavLink>
