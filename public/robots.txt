@@ -1,6 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
 Disallow:
-Sitemap: nazim-buranov.uz/sitemap.xml
-
+Sitemap: https://www.nazim-buranov.uz/sitemap.xml
 

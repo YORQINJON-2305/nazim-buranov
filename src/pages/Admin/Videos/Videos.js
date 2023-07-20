@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import "./videos.css";
 import { useState } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";

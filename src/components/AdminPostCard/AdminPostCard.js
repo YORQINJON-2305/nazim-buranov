@@ -18,6 +18,7 @@ export const AdminPostCard = ({ data, fetchData }) => {
   const splitText = text?.split(" ").slice(0, 30).join(" ");
   const splitTitle = title?.split(" ").slice(0, 8).join(" ");
   const trimDate = created_at?.slice(0, 10);
+  console.log(category);
 
   const changeCategory = () => {
     if (category === "Yangiliklar") {
@@ -34,6 +35,8 @@ export const AdminPostCard = ({ data, fetchData }) => {
       return "books";
     } else if (category === "Foto_lavhalar") {
       return "photos";
+    } else if (category === "Xalqaro_munosabatlar") {
+      return "international_relations";
     }
   };
 
