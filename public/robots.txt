@@ -1,5 +1,5 @@
 
 User-agent: *
 Disallow:
-Sitemap: https://www.nazim-buranov.uz/sitemap.xml
+Sitemap: nazim-buranov.uz/sitemap.xml
 
