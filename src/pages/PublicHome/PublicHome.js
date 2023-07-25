@@ -9,6 +9,7 @@ import { Recommendation } from "../../components/Recommendation/Recommendation";
 import { SkeletonEdit } from "../../components/SkeletonSmall/SkeletonSmall";
 
 export const PublicHome = () => {
+  const [loading, setLoading] = useState(true);
   const [articlesData, setArticlesData] = useState([]);
   const [scientificArticle, setScientificArticle] = useState([]);
   const [relationsData, setRelationsData] = useState([]);
@@ -19,8 +20,9 @@ export const PublicHome = () => {
     axios
       .get("https://nazimburanov.uz/articles/")
       .then(res => {
-        if (res.data.results.length >= 1) {
+        if (res.status === 200) {
           setArticlesData(res.data.results[res.data.results.length - 1]);
+          setLoading(false);
         } else {
           setArticlesData(null);
         }
@@ -32,8 +34,9 @@ export const PublicHome = () => {
     axios
       .get("https://nazimburanov.uz/scientific_articles/")
       .then(res => {
-        if (res.data.results.length >= 1) {
+        if (res.status === 200) {
           setScientificArticle(res.data.results[res.data.results.length - 1]);
+          setLoading(false);
         } else {
           setArticlesData(null);
         }
@@ -45,8 +48,9 @@ export const PublicHome = () => {
     axios
       .get("https://nazimburanov.uz/stories/")
       .then(res => {
-        if (res.data.results.length >= 1) {
+        if (res.status === 200) {
           setStoriesData(res.data.results[res.data.results.length - 1]);
+          setLoading(false);
         } else {
           setArticlesData(null);
         }
@@ -57,7 +61,12 @@ export const PublicHome = () => {
   useEffect(() => {
     axios
       .get("https://nazimburanov.uz/international_relations/")
-      .then(res => setRelationsData(res.data.results.slice(-3)))
+      .then(res => {
+        if (res.status === 200) {
+          setRelationsData(res.data.results.slice(-3));
+          setLoading(false);
+        }
+      })
       .catch(err => console.log(err));
   }, []);
 
@@ -68,8 +77,14 @@ export const PublicHome = () => {
       .catch(err => console.log(err));
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+
   return (
-    <div>
+    <div className="home">
       <Banner />
       <div className="home-wrapper">
         <div className="author-wrap">
@@ -79,39 +94,54 @@ export const PublicHome = () => {
 
         <div className="home-info-wrap">
           {articlesData ? <Blog data={articlesData} /> : ""}
-          {
+          {loading ? (
+            <SkeletonEdit />
+          ) : relationsData?.length > 0 ? (
             <>
               <h2 className="recommendation-category-text">
                 Xalqaro munosabatlar
               </h2>
-
-              {relationsData?.length !== 0 ? (
-                <ul className="recommendation-list">
-                  {relationsData?.map(item => (
-                    <Recommendation key={item.id} data={item} />
-                  ))}
-                </ul>
-              ) : (
-                <SkeletonEdit />
-              )}
+              <ul className="recommendation-list">
+                {relationsData?.map(item => (
+                  <Recommendation key={item.id} data={item} />
+                ))}
+              </ul>
             </>
-          }
+          ) : (
+            ""
+          )}
           {scientificArticle ? <Blog data={scientificArticle} /> : ""}
-          {
+          {loading ? (
+            <SkeletonEdit />
+          ) : relationsData?.length > 0 ? (
+            <>
+              <h2 className="recommendation-category-text">
+                Xalqaro munosabatlar
+              </h2>
+              <ul className="recommendation-list">
+                {relationsData?.map(item => (
+                  <Recommendation key={item.id} data={item} />
+                ))}
+              </ul>
+            </>
+          ) : (
+            ""
+          )}
+          {storiesData ? <Blog data={storiesData} /> : ""}
+          {loading ? (
+            <SkeletonEdit />
+          ) : newsData?.length > 0 ? (
             <>
               <h2 className="recommendation-category-text">Yangiliklar</h2>
-              {relationsData?.length !== 0 ? (
-                <ul className="recommendation-list">
-                  {newsData?.map(item => (
-                    <Recommendation key={item.id} data={item} />
-                  ))}
-                </ul>
-              ) : (
-                <SkeletonEdit />
-              )}
+              <ul className="recommendation-list">
+                {newsData?.map(item => (
+                  <Recommendation key={item.id} data={item} />
+                ))}
+              </ul>
             </>
-          }
-          {storiesData ? <Blog data={storiesData} /> : ""}
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

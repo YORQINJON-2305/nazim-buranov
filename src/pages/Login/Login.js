@@ -1,3 +1,4 @@
+import "./login.css";
 import {
   Button,
   InputAdornment,
@@ -11,18 +12,23 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 export const Login = () => {
   const [inputType, setInputType] = useState(false);
+  const [error, setError] = useState({});
   const { setToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const schema = yup.object({
     first_name: yup.string().required("Majburiy"),
-    password: yup.string().min(3, "3ta").max(20, "20ta").required("Majburiy"),
+    password: yup
+      .string()
+      .min(3, "Eng kami 3ta")
+      .max(20, "20ta")
+      .required("Majburiy"),
   });
 
   const {
@@ -52,13 +58,13 @@ export const Login = () => {
           navigate("/");
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => setError(err.response.data));
   };
 
   return (
     <div className="login-wrap">
       <div className="my-container">
-        <Paper className="login" elevation={24}>
+        <Paper className="login">
           <Typography
             sx={{
               marginBottom: "20px",
@@ -73,21 +79,32 @@ export const Login = () => {
             gutterBottom>
             Tizimga kirish
           </Typography>
+          <p className="login-error-text">{error ? error?.detail : ""}</p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Stack spacing={2} marginBottom="20px">
               <TextField
                 label="Foydalanuvchi nomi"
+                required
                 helperText={errors.first_name?.message}
                 {...register("first_name")}
               />
               <TextField
                 type={inputType ? "text" : "password"}
                 label="Parol"
+                required
                 InputProps={{
                   endAdornment: (
                     <InputAdornment
                       onClick={() => setInputType(!inputType)}
-                      position="end"></InputAdornment>
+                      position="end">
+                      <div className="password-show-btn-wrap">
+                        {inputType ? (
+                          <AiOutlineEye />
+                        ) : (
+                          <AiOutlineEyeInvisible />
+                        )}
+                      </div>
+                    </InputAdornment>
                   ),
                 }}
                 helperText={errors.password?.message}

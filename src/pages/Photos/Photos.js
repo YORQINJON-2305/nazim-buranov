@@ -45,35 +45,33 @@ export const Photos = () => {
       ) : (
         <div className="photos-wrap">
           {data.length > 0 ? (
-            <div className="photos-info-wrap">
-              <ul className="photos-list">
-                {data?.map(item => (
-                  <li key={item.id} className="photos-item">
-                    <img
-                      className="photos-img"
-                      src={item.picture}
-                      alt={item.title}
-                    />
-                    <Link className="photos-link" to={`${item.id}`}>
-                      <Button
-                        variant="outlined"
-                        onClick={() => window.scrollTo(0, 500)}
-                        style={{ color: "#fff", borderColor: "#fff" }}>
-                        Batafsil
-                      </Button>
-                    </Link>
-                    <div className="photos-item-inner"></div>
-                  </li>
-                ))}
-              </ul>
-              <div className="author-wrap">
-                <UserInfo />
-                <TopButton />
-              </div>
-            </div>
+            <ul className="photos-list">
+              {data?.map(item => (
+                <li key={item.id} className="photos-item">
+                  <img
+                    className="photos-img"
+                    src={item.picture}
+                    alt={item.title}
+                  />
+                  <Link className="photos-link" to={`${item.id}`}>
+                    <Button
+                      variant="outlined"
+                      onClick={() => window.scrollTo(0, 500)}
+                      style={{ color: "#fff", borderColor: "#fff" }}>
+                      Batafsil
+                    </Button>
+                  </Link>
+                  <div className="photos-item-inner"></div>
+                </li>
+              ))}
+            </ul>
           ) : (
-            <h3>Rasmlar mavjud emas!</h3>
+            <h3 className="post-no-data-text">Rasmlar mavjud emas!</h3>
           )}
+          <div className="author-wrap">
+            <UserInfo />
+            <TopButton />
+          </div>
         </div>
       )}
     </>

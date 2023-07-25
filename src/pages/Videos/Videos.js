@@ -77,7 +77,7 @@ export const Videos = () => {
               ))}
             </ul>
           ) : (
-            <h3>Xabarlar mavjud emas!</h3>
+            <h3 className="post-no-data-text">Xabarlar mavjud emas!</h3>
           )}
           <div className="author-wrap">
             <UserInfo />

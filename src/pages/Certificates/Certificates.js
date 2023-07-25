@@ -73,14 +73,14 @@ export const Certificates = () => {
                   ))}
                 </ul>
               </div>
-              <div className="author-wrap">
-                <UserInfo />
-                <TopButton />
-              </div>
             </div>
           ) : (
-            <h3>Sertifikatlar mavjud emas!</h3>
+            <h3 className="post-no-data-text">Sertifikatlar mavjud emas!</h3>
           )}
+          <div className="author-wrap">
+            <UserInfo />
+            <TopButton />
+          </div>
         </div>
       )}
     </>
